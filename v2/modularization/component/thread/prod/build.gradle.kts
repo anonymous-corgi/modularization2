@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-  namespace = "com.anonymouscorgi.modularization.component.thread.api"
+  namespace = "com.anonymouscorgi.modularization.component.thread"
   compileSdk = 34
 
   defaultConfig {
@@ -31,6 +31,7 @@ android {
 
 dependencies {
   implementation(project(":modularization:core"))
+  implementation(project(":modularization:component:thread:api"))
 
   implementation(libs.androidx.core.ktx)
   implementation(libs.androidx.appcompat)
