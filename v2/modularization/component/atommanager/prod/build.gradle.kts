@@ -1,10 +1,11 @@
 plugins {
   alias(libs.plugins.android.library)
   alias(libs.plugins.jetbrains.kotlin.android)
+  id("kotlin-kapt")
 }
 
 android {
-  namespace = "com.anonymouscorgi.modularization.component.atommanager.api"
+  namespace = "com.anonymouscorgi.modularization.component.atommanager.prod"
   compileSdk = 34
 
   defaultConfig {
@@ -31,6 +32,13 @@ android {
 
 dependencies {
   implementation(project(":modularization:core"))
+  implementation(project(":modularization:component:atommanager:api"))
+  implementation(project(":modularization:component:clock:api"))
+  implementation(project(":modularization:component:network:api"))
+  implementation(project(":modularization:component:persistence:api"))
+
+  implementation("com.google.dagger:dagger:2.x")
+  kapt("com.google.dagger:dagger-compiler:2.x")
 
   implementation(libs.androidx.core.ktx)
   implementation(libs.androidx.appcompat)
