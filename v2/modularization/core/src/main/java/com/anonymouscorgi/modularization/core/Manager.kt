@@ -1,4 +1,3 @@
 package com.anonymouscorgi.modularization.core
 
-interface Manager {
-}
+interface Manager : Atom {}
