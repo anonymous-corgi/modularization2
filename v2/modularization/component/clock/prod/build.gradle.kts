@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-  namespace = "com.anonymouscorgi.modularization.component.atommanager.api"
+  namespace = "com.anonymouscorgi.modularization.component.clock"
   compileSdk = 34
 
   defaultConfig {
@@ -32,9 +32,6 @@ android {
 dependencies {
   implementation(project(":modularization:core"))
   implementation(project(":modularization:component:clock:api"))
-  implementation(project(":modularization:component:network:api"))
-  implementation(project(":modularization:component:persistence:api"))
-
 
   implementation(libs.androidx.core.ktx)
   implementation(libs.androidx.appcompat)

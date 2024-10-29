@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-  namespace = "com.anonymouscorgi.modularization.component.network"
+  namespace = "com.anonymouscorgi.modularization.component.network.api"
   compileSdk = 34
 
   defaultConfig {

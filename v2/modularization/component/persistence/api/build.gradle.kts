@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-  namespace = "com.anonymouscorgi.modularization.component.persistence"
+  namespace = "com.anonymouscorgi.modularization.component.persistence.api"
   compileSdk = 34
 
   defaultConfig {
