@@ -1,11 +1,13 @@
 package com.anonymouscorgi.modularization.component.thread.api
 
 import com.anonymouscorgi.modularization.core.Manager
+import com.anonymouscorgi.modularization.core.annotation.AtomRetention
 import java.util.concurrent.Executor
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.ScheduledExecutorService
 
 /** The Executors interface provides a set of managed executors */
+@AtomRetention(retention = AtomRetention.SINGLETON)
 interface UtopiaExecutors : Manager {
 
   /**

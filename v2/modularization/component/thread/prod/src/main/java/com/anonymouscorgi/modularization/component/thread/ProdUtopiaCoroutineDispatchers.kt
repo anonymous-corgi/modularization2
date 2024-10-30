@@ -1,13 +1,15 @@
 package com.anonymouscorgi.modularization.component.thread
 
+import com.anonymouscorgi.modularization.component.atommanager.AtomManager
 import com.anonymouscorgi.modularization.component.thread.api.UtopiaCoroutineDispatchers
 import com.anonymouscorgi.modularization.component.thread.api.UtopiaExecutors
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.asCoroutineDispatcher
 
-class ProdUtopiaCoroutineDispatchers(private val utopiaExecutors: UtopiaExecutors) :
-  UtopiaCoroutineDispatchers {
+class ProdUtopiaCoroutineDispatchers(atomManager: AtomManager) : UtopiaCoroutineDispatchers {
+
+  private val utopiaExecutors: UtopiaExecutors by lazy { atomManager.get(UtopiaExecutors::class.java) }
 
   override val Main: CoroutineDispatcher = Dispatchers.Main
 

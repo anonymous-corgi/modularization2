@@ -1,7 +1,6 @@
 plugins {
   alias(libs.plugins.android.library)
   alias(libs.plugins.jetbrains.kotlin.android)
-  id("kotlin-kapt")
 }
 
 android {
@@ -37,12 +36,11 @@ dependencies {
   implementation(project(":modularization:component:network:api"))
   implementation(project(":modularization:component:persistence:api"))
 
-  implementation("com.google.dagger:dagger:2.x")
-  kapt("com.google.dagger:dagger-compiler:2.x")
-
+  implementation(libs.dagger)
   implementation(libs.androidx.core.ktx)
   implementation(libs.androidx.appcompat)
   implementation(libs.material)
+
   testImplementation(libs.junit)
   androidTestImplementation(libs.androidx.junit)
   androidTestImplementation(libs.androidx.espresso.core)

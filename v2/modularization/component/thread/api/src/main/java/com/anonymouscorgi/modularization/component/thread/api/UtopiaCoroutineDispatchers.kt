@@ -1,9 +1,11 @@
 package com.anonymouscorgi.modularization.component.thread.api
 
 import com.anonymouscorgi.modularization.core.Manager
+import com.anonymouscorgi.modularization.core.annotation.AtomRetention
 import kotlinx.coroutines.CoroutineDispatcher
 
 /** The CoroutineDispatchers interface provides a set of managed coroutine dispatchers. */
+@AtomRetention(retention = AtomRetention.SINGLETON)
 interface UtopiaCoroutineDispatchers : Manager {
 
   /**
