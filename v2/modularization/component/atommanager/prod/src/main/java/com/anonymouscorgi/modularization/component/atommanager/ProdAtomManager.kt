@@ -31,11 +31,9 @@ class ProdAtomManager(atomProviders: Provider<Map<Class<*>, @JvmSuppressWildcard
       atomCache: MutableMap<Class<*>, Atom>,
       atomProviders: Map<Class<*>, Provider<Atom>>,
     ): A {
-      var atom: Atom?
-      atom = atomCache[clazz]
+      var atom: Atom? = atomCache[clazz]
       if (atom == null) {
-        atom = createAtom(clazz, atomProviders)
-        synchronized(atomCache) { atom = atomCache.getOrPut(clazz) { atom as A } }
+        synchronized(atomCache) { atom = atomCache.getOrPut(clazz) { createAtom(clazz, atomProviders) } }
       }
       return atom as A
     }
