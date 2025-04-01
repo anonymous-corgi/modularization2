@@ -2,13 +2,12 @@ package com.anonymouscorgi.modularization.component.thread
 
 import android.os.Handler
 import android.os.Looper
-import com.anonymouscorgi.modularization.component.thread.api.UtopiaExecutors
 import java.util.concurrent.Executor
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 import java.util.concurrent.ScheduledExecutorService
 
-class ProdUtopiaExecutors() : UtopiaExecutors {
+class ProdExecutorManager() : ExecutorManager {
 
   override val Main: Executor = object : Executor {
 

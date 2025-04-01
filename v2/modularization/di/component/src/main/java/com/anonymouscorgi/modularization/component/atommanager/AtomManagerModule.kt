@@ -3,6 +3,7 @@ package com.anonymouscorgi.modularization.component.atommanager
 import com.anonymouscorgi.modularization.component.clock.ClockServiceModule
 import com.anonymouscorgi.modularization.component.thread.ThreadModule
 import com.anonymouscorgi.modularization.core.Atom
+import com.anonymouscorgi.modularization.core.AtomManager
 import dagger.Module
 import dagger.Provides
 import javax.inject.Provider

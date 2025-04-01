@@ -30,8 +30,8 @@ android {
 }
 
 dependencies {
-  implementation(project(":modularization:core"))
-  implementation(project(":modularization:component:clock:api"))
+  api(project(":modularization:core"))
+  api(project(":modularization:component:clock:api"))
 
   implementation(libs.androidx.core.ktx)
   implementation(libs.androidx.appcompat)

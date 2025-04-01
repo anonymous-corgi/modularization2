@@ -32,11 +32,8 @@ android {
 
 dependencies {
   implementation(project(":modularization:core"))
-  implementation(project(":modularization:component:atommanager:api"))
   implementation(project(":modularization:component:atommanager:prod"))
-  implementation(project(":modularization:component:clock:api"))
   implementation(project(":modularization:component:clock:prod"))
-  implementation(project(":modularization:component:thread:api"))
   implementation(project(":modularization:component:thread:prod"))
 
   kapt(libs.dagger.compiler)

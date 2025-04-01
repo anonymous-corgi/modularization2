@@ -1,5 +1,6 @@
 package com.anonymouscorgi.modularization.component.clock
 
+import com.anonymouscorgi.modularization.core.AtomManager
 import com.anonymouscorgi.modularization.core.Service
 import com.anonymouscorgi.modularization.core.annotation.AtomRetention
 
@@ -12,3 +13,5 @@ interface ClockService : Service {
 
   fun elapsedRealtime(): Long
 }
+
+fun AtomManager.getClockService() : ClockService = get(ClockService::class.java)

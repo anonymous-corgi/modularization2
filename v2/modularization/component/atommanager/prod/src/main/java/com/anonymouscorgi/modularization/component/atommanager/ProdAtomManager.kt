@@ -1,6 +1,7 @@
 package com.anonymouscorgi.modularization.component.atommanager
 
 import com.anonymouscorgi.modularization.core.Atom
+import com.anonymouscorgi.modularization.core.AtomManager
 import com.anonymouscorgi.modularization.core.annotation.AtomRetention
 import java.util.WeakHashMap
 import javax.inject.Provider

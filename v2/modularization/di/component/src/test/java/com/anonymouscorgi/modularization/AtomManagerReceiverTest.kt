@@ -1,8 +1,8 @@
 package com.anonymouscorgi.modularization
 
 import com.anonymouscorgi.modularization.component.AtomManagerReceiver
-import com.anonymouscorgi.modularization.component.clock.ClockService
-import com.anonymouscorgi.modularization.component.thread.api.UtopiaCoroutineDispatchers
+import com.anonymouscorgi.modularization.component.clock.getClockService
+import com.anonymouscorgi.modularization.component.thread.getCoroutineDispatcherManager
 import com.google.common.truth.Truth.assertThat
 import org.junit.Test
 
@@ -20,8 +20,8 @@ class AtomManagerReceiverTest {
 
     assertThat(receiver.atomManager).isNotNull()
 
-    val clockService1 = receiver.atomManager.get(ClockService::class.java)
-    val clockService2 = receiver.atomManager.get(ClockService::class.java)
+    val clockService1 = receiver.atomManager.getClockService()
+    val clockService2 = receiver.atomManager.getClockService()
 
     assertThat(clockService1).isNotNull()
     assertThat(clockService2).isEqualTo(clockService1)
@@ -35,9 +35,9 @@ class AtomManagerReceiverTest {
     assertThat(receiver.atomManager).isNotNull()
 
     val utopiaCoroutineDispatchers1 =
-      receiver.atomManager.get(UtopiaCoroutineDispatchers::class.java)
+      receiver.atomManager.getCoroutineDispatcherManager()
     val utopiaCoroutineDispatchers2 =
-      receiver.atomManager.get(UtopiaCoroutineDispatchers::class.java)
+      receiver.atomManager.getCoroutineDispatcherManager()
 
     assertThat(utopiaCoroutineDispatchers1).isNotNull()
     assertThat(utopiaCoroutineDispatchers2).isEqualTo(utopiaCoroutineDispatchers1)

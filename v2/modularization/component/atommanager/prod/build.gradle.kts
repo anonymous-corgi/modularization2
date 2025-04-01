@@ -31,7 +31,6 @@ android {
 
 dependencies {
   implementation(project(":modularization:core"))
-  implementation(project(":modularization:component:atommanager:api"))
   implementation(project(":modularization:component:clock:api"))
   implementation(project(":modularization:component:network:api"))
   implementation(project(":modularization:component:persistence:api"))

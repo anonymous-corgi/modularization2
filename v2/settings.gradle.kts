@@ -23,7 +23,6 @@ rootProject.name = "UtopiaApplication"
 include(":app")
 include(":modularization:core")
 include(":modularization:component:analytics:api")
-include(":modularization:component:atommanager:api")
 include(":modularization:component:atommanager:prod")
 include(":modularization:component:clock:api")
 include(":modularization:component:clock:prod")

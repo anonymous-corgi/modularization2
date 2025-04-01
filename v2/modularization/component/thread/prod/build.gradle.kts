@@ -30,9 +30,8 @@ android {
 }
 
 dependencies {
-  implementation(project(":modularization:core"))
-  implementation(project(":modularization:component:atommanager:api"))
-  implementation(project(":modularization:component:thread:api"))
+  api(project(":modularization:core"))
+  api(project(":modularization:component:thread:api"))
 
   implementation(libs.androidx.core.ktx)
   implementation(libs.androidx.appcompat)
