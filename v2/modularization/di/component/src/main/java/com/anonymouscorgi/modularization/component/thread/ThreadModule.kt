@@ -1,7 +1,7 @@
 package com.anonymouscorgi.modularization.component.thread
 
-import com.anonymouscorgi.modularization.core.AtomManager
 import com.anonymouscorgi.modularization.core.Atom
+import com.anonymouscorgi.modularization.core.AtomManager
 import dagger.Module
 import dagger.Provides
 import dagger.multibindings.ClassKey

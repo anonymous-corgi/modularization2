@@ -6,7 +6,7 @@ import com.anonymouscorgi.modularization.core.annotation.AtomRetention
 import java.util.WeakHashMap
 import javax.inject.Provider
 
-class ProdAtomManager(atomProviders: Provider<Map<Class<*>, @JvmSuppressWildcards Provider<Atom>>>) :
+class ProdAppAtomManager(atomProviders: Provider<Map<Class<*>, @JvmSuppressWildcards Provider<Atom>>>) :
   AtomManager {
 
   private val atomProviders: Map<Class<*>, Provider<Atom>> by lazy { atomProviders.get() }
@@ -34,7 +34,9 @@ class ProdAtomManager(atomProviders: Provider<Map<Class<*>, @JvmSuppressWildcard
     ): A {
       var atom: Atom? = atomCache[clazz]
       if (atom == null) {
-        synchronized(atomCache) { atom = atomCache.getOrPut(clazz) { createAtom(clazz, atomProviders) } }
+        synchronized(atomCache) {
+          atom = atomCache.getOrPut(clazz) { createAtom(clazz, atomProviders) }
+        }
       }
       return atom as A
     }
