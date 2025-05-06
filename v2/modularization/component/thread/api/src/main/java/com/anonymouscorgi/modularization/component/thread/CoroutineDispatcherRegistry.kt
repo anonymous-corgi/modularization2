@@ -1,13 +1,13 @@
 package com.anonymouscorgi.modularization.component.thread
 
+import com.anonymouscorgi.modularization.core.Atom
 import com.anonymouscorgi.modularization.core.AtomManager
-import com.anonymouscorgi.modularization.core.Manager
 import com.anonymouscorgi.modularization.core.annotation.AtomRetention
 import kotlinx.coroutines.CoroutineDispatcher
 
 /** The CoroutineDispatchers interface provides a set of managed coroutine dispatchers. */
 @AtomRetention(retention = AtomRetention.SINGLETON)
-interface CoroutineDispatcherManager : Manager {
+interface CoroutineDispatcherRegistry : Atom {
 
   /**
    * Dispatcher for running coroutines on the main thread.
@@ -34,5 +34,5 @@ interface CoroutineDispatcherManager : Manager {
   val LowPower: CoroutineDispatcher
 }
 
-fun AtomManager.getCoroutineDispatcherManager() : CoroutineDispatcherManager =
-  get(CoroutineDispatcherManager::class.java)
+fun AtomManager.coroutineDispatcherRegistry() : CoroutineDispatcherRegistry =
+  get(CoroutineDispatcherRegistry::class.java)

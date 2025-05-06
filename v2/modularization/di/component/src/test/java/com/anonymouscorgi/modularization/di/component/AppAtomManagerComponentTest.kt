@@ -3,7 +3,7 @@ package com.anonymouscorgi.modularization.di.component
 import androidx.test.core.app.ApplicationProvider
 import com.anonymouscorgi.modularization.component.atommanager.app.DaggerAppAtomManagerComponent
 import com.anonymouscorgi.modularization.component.clock.getClockService
-import com.anonymouscorgi.modularization.component.thread.getCoroutineDispatcherManager
+import com.anonymouscorgi.modularization.component.thread.coroutineDispatcherRegistry
 import com.google.common.truth.Truth.assertThat
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -43,9 +43,9 @@ class AppAtomManagerComponentTest {
         .appContext(ApplicationProvider.getApplicationContext()).build().getAtomManager()
 
     val utopiaCoroutineDispatchers1 =
-      appAtomManager.getCoroutineDispatcherManager()
+      appAtomManager.coroutineDispatcherRegistry()
     val utopiaCoroutineDispatchers2 =
-      appAtomManager.getCoroutineDispatcherManager()
+      appAtomManager.coroutineDispatcherRegistry()
 
     assertThat(utopiaCoroutineDispatchers1).isNotNull()
     assertThat(utopiaCoroutineDispatchers2).isEqualTo(utopiaCoroutineDispatchers1)

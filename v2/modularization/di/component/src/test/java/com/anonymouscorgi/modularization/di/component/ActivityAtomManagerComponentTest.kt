@@ -6,7 +6,7 @@ import com.anonymouscorgi.modularization.component.atommanager.app.DaggerAppAtom
 import com.anonymouscorgi.modularization.component.clock.getClockService
 import com.anonymouscorgi.modularization.component.delegation.ActivityDelegator
 import com.anonymouscorgi.modularization.component.system.permissions.getPermissionsRequester
-import com.anonymouscorgi.modularization.component.thread.getCoroutineDispatcherManager
+import com.anonymouscorgi.modularization.component.thread.coroutineDispatcherRegistry
 import com.google.common.truth.Truth.assertThat
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -71,9 +71,9 @@ class ActivityAtomManagerComponentTest {
         .appContext(ApplicationProvider.getApplicationContext()).build().getAtomManager()
 
     val utopiaCoroutineDispatchers1 =
-      appAtomManager.getCoroutineDispatcherManager()
+      appAtomManager.coroutineDispatcherRegistry()
     val utopiaCoroutineDispatchers2 =
-      appAtomManager.getCoroutineDispatcherManager()
+      appAtomManager.coroutineDispatcherRegistry()
 
     assertThat(utopiaCoroutineDispatchers1).isNotNull()
     assertThat(utopiaCoroutineDispatchers2).isEqualTo(utopiaCoroutineDispatchers1)

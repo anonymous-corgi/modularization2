@@ -12,12 +12,12 @@ object ThreadModule {
 
   @Provides
   @IntoMap
-  @ClassKey(ExecutorManager::class)
-  fun provideUtopiaExecutors(): Atom = ProdExecutorManager()
+  @ClassKey(ExecutorRegistry::class)
+  fun provideUtopiaExecutors(): Atom = ProdExecutorRegistry()
 
   @Provides
   @IntoMap
-  @ClassKey(CoroutineDispatcherManager::class)
+  @ClassKey(CoroutineDispatcherRegistry::class)
   fun provideUtopiaCoroutineDispatchers(atomManager: AtomManager): Atom =
-    ProdCoroutineDispatcherManager(atomManager)
+    ProdCoroutineDispatcherRegistry(atomManager)
 }

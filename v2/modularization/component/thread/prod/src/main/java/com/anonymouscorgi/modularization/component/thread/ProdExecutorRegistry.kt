@@ -7,7 +7,7 @@ import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 import java.util.concurrent.ScheduledExecutorService
 
-class ProdExecutorManager() : ExecutorManager {
+class ProdExecutorRegistry : ExecutorRegistry {
 
   override val Main: Executor = object : Executor {
 

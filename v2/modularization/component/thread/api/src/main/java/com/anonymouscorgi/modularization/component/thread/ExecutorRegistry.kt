@@ -1,7 +1,7 @@
 package com.anonymouscorgi.modularization.component.thread
 
+import com.anonymouscorgi.modularization.core.Atom
 import com.anonymouscorgi.modularization.core.AtomManager
-import com.anonymouscorgi.modularization.core.Manager
 import com.anonymouscorgi.modularization.core.annotation.AtomRetention
 import java.util.concurrent.Executor
 import java.util.concurrent.ExecutorService
@@ -9,7 +9,7 @@ import java.util.concurrent.ScheduledExecutorService
 
 /** The Executors interface provides a set of managed executors */
 @AtomRetention(retention = AtomRetention.SINGLETON)
-interface ExecutorManager : Manager {
+interface ExecutorRegistry : Atom {
 
   /**
    * Executor for running tasks on the main thread.
@@ -36,4 +36,4 @@ interface ExecutorManager : Manager {
   val LowPower: ExecutorService
 }
 
-fun AtomManager.getExecutorManager() : ExecutorManager = get(ExecutorManager::class.java)
+fun AtomManager.executorRegistry(): ExecutorRegistry = get(ExecutorRegistry::class.java)
