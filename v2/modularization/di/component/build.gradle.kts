@@ -25,6 +25,11 @@ android {
     sourceCompatibility = JavaVersion.VERSION_11
     targetCompatibility = JavaVersion.VERSION_11
   }
+  testOptions {
+    unitTests {
+      isIncludeAndroidResources = true
+    }
+  }
   kotlinOptions {
     jvmTarget = "11"
   }
@@ -34,6 +39,7 @@ dependencies {
   implementation(project(":modularization:core"))
   implementation(project(":modularization:component:atommanager:prod"))
   implementation(project(":modularization:component:clock:prod"))
+  implementation(project(":modularization:component:system:permissions:prod"))
   implementation(project(":modularization:component:thread:prod"))
 
   kapt(libs.dagger.compiler)
@@ -45,6 +51,12 @@ dependencies {
   testImplementation(libs.google.truth)
   testImplementation(libs.junit)
   testImplementation(libs.junit.jupiter)
+  testImplementation(libs.androidx.espresso.core)
+  testImplementation(libs.androidx.core.ktx)
+  testImplementation(libs.robolectric)
+  testImplementation(libs.mockito.kotlin)
+
   androidTestImplementation(libs.androidx.junit)
   androidTestImplementation(libs.androidx.espresso.core)
+  androidTestImplementation(libs.google.truth)
 }
