@@ -31,6 +31,7 @@ android {
 
 dependencies {
   implementation(project(":modularization:core"))
+  api(project(":modularization:component:delegation:api"))
   api(project(":modularization:component:system:permissions:api"))
 
   implementation(libs.androidx.core.ktx)

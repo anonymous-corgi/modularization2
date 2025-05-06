@@ -4,18 +4,8 @@ import android.content.Context
 import android.content.pm.PackageManager
 import androidx.core.content.ContextCompat
 
-class ProdPermissionsManager(
-  private val appContext: Context,
-  private val permissionsRequester: PermissionsRequester,
-) : PermissionsManager {
+class ProdPermissionsChecker(private val appContext: Context) : PermissionsChecker {
 
   override fun checkSelfPermission(permission: String): Boolean =
     ContextCompat.checkSelfPermission(appContext, permission) == PackageManager.PERMISSION_GRANTED
-
-  override fun requestPermissions(
-    permissions: Array<String>,
-    callback: PermissionsRequester.Callback,
-  ) {
-    permissionsRequester.requestPermissions(permissions, callback)
-  }
 }
