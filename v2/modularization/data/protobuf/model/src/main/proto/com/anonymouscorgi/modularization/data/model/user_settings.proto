@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package com.anonymouscorgi.modularization.data.model;
+
+option java_package = "com.anonymouscorgi.modularization.data.model"; // For Java generated code
+option java_multiple_files = true; // Generates a separate .java file for each message
+// option optimize_for = LITE_RUNTIME; // Recommended for Android, though --java_out=lite handles this for Java
+
+message UserSettings {
+  string theme = 1;
+  bool notifications_enabled = 2;
+  int32 font_size = 3;
+
+  enum DisplayMode {
+    COMPACT = 0;
+    COMFORTABLE = 1;
+    EXPANDED = 2;
+  }
+  DisplayMode display_mode = 4;
+
+  map<string, string> feature_flags = 5;
+}
+
+message AppConfig {
+  string api_key = 1;
+  UserSettings default_user_settings = 2;
+}
