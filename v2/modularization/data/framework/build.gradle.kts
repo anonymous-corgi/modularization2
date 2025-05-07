@@ -1,10 +1,11 @@
 plugins {
   alias(libs.plugins.android.library)
   alias(libs.plugins.jetbrains.kotlin.android)
+  alias(libs.plugins.kotlin.parcelize)
 }
 
 android {
-  namespace = "com.anonymouscorgi.modularization.data.session"
+  namespace = "com.anonymouscorgi.modularization.data.framework"
   compileSdk = 35
 
   defaultConfig {
@@ -35,6 +36,7 @@ dependencies {
   implementation(libs.androidx.appcompat)
   implementation(libs.material)
   testImplementation(libs.junit)
+  testImplementation(libs.google.truth)
   androidTestImplementation(libs.androidx.junit)
   androidTestImplementation(libs.androidx.espresso.core)
 }

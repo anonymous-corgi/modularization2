@@ -1,4 +1,4 @@
-package com.anonymouscorgi.modularization.data.session
+package com.anonymouscorgi.modularization.data.framework
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
   fun useAppContext() {
     // Context of the app under test.
     val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-    assertEquals("com.anonymouscorgi.modularization.data.session.test", appContext.packageName)
+    assertEquals("com.anonymouscorgi.modularization.data.framework.test", appContext.packageName)
   }
 }
